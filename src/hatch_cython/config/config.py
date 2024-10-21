@@ -34,6 +34,7 @@ __known__ = frozenset(
         "define_macros",
         "compiled_sdist",
         "extra_link_args",
+        "compile_parallel",
         "cythonize_kwargs",
     )
 )
@@ -145,6 +146,7 @@ class Config:
     directives: dict = field(default_factory=lambda: DIRECTIVES)
     compile_args: ListedArgs = field(default_factory=get_default_compile)
     compile_kwargs: dict = field(default_factory=dict)
+    compile_parallel: bool = field(default=False)
     cythonize_kwargs: dict = field(default_factory=dict)
     extra_link_args: ListedArgs = field(default_factory=get_default_link)
     compiled_sdist: bool = field(default=False)
