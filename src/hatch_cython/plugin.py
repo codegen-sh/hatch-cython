@@ -312,7 +312,7 @@ class CythonBuildHook(BuildHookInterface):
             
             if self.compile_parallel:
                 self.app.display_info(f"Compiling in parallel ({self.compile_parallel})")
-                command.extend(["-j", multiprocessing.cpu_count()])
+                command.extend(["-j", str(multiprocessing.cpu_count())])
             
             process = subprocess.run(  # noqa: PLW1510
                 command,   
